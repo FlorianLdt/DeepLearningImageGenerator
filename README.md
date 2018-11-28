@@ -82,7 +82,7 @@ Let's assume that the hierarchy of your Deep Learning project is:
    |_ ...
 |_ DeepLearningImageGenerator.py
 ```
-You can now run `DeepLearningImageGenerator.py "original/" "layer/" 10000 "images/"`
+You can now run `DeepLearningImageGenerator.py original layer 10000 images cat`
 
 When the generation will be finish, your Deep Learning project will look like:
 
