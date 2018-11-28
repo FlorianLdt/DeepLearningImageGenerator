@@ -6,6 +6,32 @@ Image generator that can be used in Deep Learning **(Image classification or Obj
 
 Initialy created for the project [WallyML](https://github.com/FlorianLdt/WallyML) and the talk **Solving “Where’s Wally?” with Turi Create**, this script can help generating a lot of image data for your Deep Learning project **(Image classification or Object Detection)** if you don't have initially access to a large amoubnt of data.
 
+The script take an original images folder ...
+
+<img src="https://github.com/FlorianLdt/DeepLearningImageGenerator/blob/master/doc/originals.png?raw=true" title="original images folder"/>
+
+... and an layers folder ...
+
+<img src="https://github.com/FlorianLdt/DeepLearningImageGenerator/blob/master/doc/layers.png?raw=true" title="layers folder"/>
+
+... to generate randomized images ...
+
+<img src="https://github.com/FlorianLdt/DeepLearningImageGenerator/blob/master/doc/generated.jpg?raw=true" title="randomized image"/>
+
+... with the annotations.csv file (Turi Create format)
+```
+path,annotations
+images/0.jpg,[{"coordinates": {"height": 36, "width": 27, "x": 567, "y": 600}, "label": "wally"}]
+images/1.jpg,[{"coordinates": {"height": 550, "width": 290, "x": 596, "y": 290}, "label": "wally"}]
+images/2.jpg,[{"coordinates": {"height": 46, "width": 23, "x": 843, "y": 415}, "label": "wally"}]
+images/3.jpg,[{"coordinates": {"height": 40, "width": 34, "x": 580, "y": 677}, "label": "wally"}]
+images/4.jpg,[{"coordinates": {"height": 105, "width": 51, "x": 196, "y": 91}, "label": "wally"}]
+images/5.jpg,[{"coordinates": {"height": 903, "width": 512, "x": 752, "y": 495}, "label": "wally"}]
+images/6.jpg,[{"coordinates": {"height": 131, "width": 57, "x": 74, "y": 232}, "label": "wally"}]
+......
+```
+
+
 ## Usage
 
 This script is using the [Pillow](https://github.com/python-pillow/Pillow) library for image manipulations.
@@ -22,7 +48,7 @@ usage: DeepLearningImageGenerator.py [-h]
 
 Create random images from a list of original images and layers.
 
-ex: python DeepLearningImageGenerator.py "original/" "layer/" 100 "images/"
+ex: python DeepLearningImageGenerator.py original/ layer/ 100 images/ cat
 will create 100 image from the original/ folder, will apply layers from the layer/ folder and generate those images in the images/ folder.
 
 positional arguments:
@@ -87,6 +113,7 @@ When the generation will be finish, your Deep Learning project will look like:
    |_ 1.jpg
    |_ 2.jpg
    |_ ...
+|_ annotations.csv
 |_ DeepLearningImageGenerator.py
 ```
 
@@ -96,6 +123,3 @@ It has not been decided yet to remove the `resized` and `256` folder after execu
 
 ## Contact
 If you have a question or any comment, feel free to open an issue or to DM me on [@florianldt](https://twitter.com/florianldt).
-
-
-
